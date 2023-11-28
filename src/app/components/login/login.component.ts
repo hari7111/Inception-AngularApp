@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { validateForm } from 'src/app/helpers/validateform';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -40,12 +41,12 @@ export class LoginComponent implements OnInit {
       this.auth.login(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-         // this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
+        alert('Login SuccesFully');
           this.loginForm.reset();
           this.router.navigate(['dashboard']);
         },
         error:(err)=>{
-         // this.toast.error({detail:"EROOR",summary:"Something went wrong!",duration:5000});
+         alert('Something went wrong');
         }
       })
 
